@@ -1,0 +1,4 @@
+la suite
+
+ajouter milles fois plus de tournois et surtout les dates qui vont avec (moi ca sera donc de semaine 1 a semaine 25)
+créer le js pour init la table player
