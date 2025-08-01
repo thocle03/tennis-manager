@@ -66,3 +66,21 @@ app.post('/simulate-week', (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ Backend TWT lancé sur http://localhost:${PORT}`);
 });
+
+app.put("/players/:id", (req, res) => {
+  const { id } = req.params;
+  const { name, nationality, style, points, money, level, age, training_pts, potential } = req.body;
+
+  db.run(
+    `UPDATE players
+     SET name = ?, nationality = ?, style = ?, points = ?, money = ?, level = ?, age = ?, training_pts = ?, potential = ?
+     WHERE id = ?`,
+    [name, nationality, style, points, money, level, age, training_pts, potential, id],
+    function (err) {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.json({ message: "✅ Joueur mis à jour", changes: this.changes });
+    }
+  );
+});
