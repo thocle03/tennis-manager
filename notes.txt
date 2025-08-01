@@ -4,5 +4,5 @@ ajouter milles fois plus de tournois et surtout les dates qui vont avec (moi ca 
 créer le js pour init la table player
 
 
-pour lancer front end npm start dans le projet ou npm run dev je sais plus
+pour lancer front end dans le projet  npm run dev 
 pour lancer le backend : node server.js
